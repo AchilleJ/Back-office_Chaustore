@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html>
 <head>
 	<title></title>
@@ -12,10 +13,10 @@
 		mysqli_set_charset($conn,'utf8');
         $sql = 'describe color;';
 		/*on impose un message d'erreur si la requête ne passe pas (or die) */
-        $req = mysqli_query($conn,$sql) or die('Erreur SQL !<br />'.$sql.'<br />'.mysql_error()); 
+        $req = mysqli_query($conn,$sql) or die('Erreur SQL !<br />'.$sql.'<br />'.mysqli_error($conn)); 
 
-        while($row = mysqli_fetch_array($req)){		 //On scanne le résultat et on construit chaque option avec
-        	echo '<input name="'.$row[0].'" required>'.$row[0].'</input>';	      // on affiche chaque champ
+        while($row = mysqli_fetch_array($req)){		
+        	echo '<input name="'.$row[0].'">'.$row[0].'</input>';	      // on affiche chaque champ
         }
         mysqli_free_result ($req); 
         ?>
