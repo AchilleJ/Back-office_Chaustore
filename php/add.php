@@ -5,17 +5,9 @@ $conn = mysqli_connect('localhost', 'chaustore', 'ZlpÄÐ:;6F{n7O{pV'); //se con
 mysqli_select_db($conn,'simplon_chaustore'); //selectionner une database
 mysqli_set_charset($conn,'utf8');
 
+	$data = $_POST[''];
+	$sql = "INSERT INTO color (name) values ('$data');"; 
+	$result = mysqli_query($conn, $sql);
 
-$name = $_POST['color'];
+	var_dump($result);
 
-$sql = "INSERT INTO color (name) values ('$name');"; 
-
-$result = mysqli_query($conn, $sql);
-
-var_dump($result);
-
-/*
-while ($row = mysqli_fetch_array($result)) {
-	echo($row[0]." ". $row[1]."<br>");
-}
-/*
