@@ -1,8 +1,9 @@
 Voici comment sera divisé le code du back office
 
--un programme permettant de modifié/ajouté/supprimer les données des tables "brand,category,size,color"
--un programme pour modifié/ajouté/supprimer les données de la table "product"
--un programme pour modifié/ajouté/supprimer les données de la table "stock"
+-un programme permettant de modifié/ajouté les données des tables "brand,category,size,color"
+-un programme pour modifié/ajouté les données de la table "product"
+-un programme pour modifié/ajouté les données de la table "stock"
+-un programme pour supprimer une ligne dans les tables.
 
 La visualisation des données de chaque tables sera lors de la modification.
 
