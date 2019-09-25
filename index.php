@@ -9,7 +9,7 @@
     <h1>Chaustore management</h1>
     <h2>choose what you want to manage:</h2>
     <div class="forms">
-        <form method="post" action="php/management.php">
+        <form class="forms_submit" method="post" action="php/management.php">
             <input name="choice" type="submit" value="Brand">
             <input name="choice" type="submit" value="Color">
             <input name="choice" type="submit" value="Size">

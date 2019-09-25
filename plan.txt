@@ -9,3 +9,4 @@ La visualisation des données de chaque tables sera lors de la modification.
 
 la page d'acceuil possedera 6 boutons "brand gestion, category gestion etc.."
 on clique sur un bouton et on lance un autre page avec modifié/ajouté/supprimer en fonction du bouton de gestion choisis 
+

@@ -6,43 +6,55 @@
 	<link rel="stylesheet" type="text/css" href="../style/style.css">
 </head>
 <body>
-	<?php echo '<h1>'.$_POST["choice"].' '.'management'.'</h1>';?>
+	<?php
+	$Choix = $_POST["choice"];
+	echo '<h1>'.$Choix.' '.'management'.'</h1>';?>
 	<h2>Add, modify or delete:</h2>
 
 	<div class="forms">
-	<?php if ($_POST["choice"] == "Brand" || $_POST["choice"] == "Color" || $_POST["choice"] == "Size" || $_POST["choice"] == "Category") { ?>
-	    <form method="post" action="add_other.php" id="add">
-	        <input name="choice" type="submit" value="Add">
+
+	<!-- forms for other table -->
+	<?php if ($Choix == "Brand" || $Choix == "Color" || $Choix == "Size" || $Choix == "Category") { ?>
+	    <form class="forms_submit" method="post" action="add_other.php" id="add">
+	    	<input type="hidden" name="choix" value="<?php echo $Choix;?>"> <!-- formulaire caché pour créer une variable avec une valeur qui est le choix transmis parmis les 4 -->	    	
+	        <input name="other" type="submit" value="Add">
 	    </form>
 
-	    <form method="post" action="modify_other.php" id="modify">
-	        <input name="choice" type="submit" value="Modify">
-	    </form>
-	<?php } ?>
- 	<?php if ($_POST["choice"] == "Product") { ?>
- 		<form method="post" action="add_product.php" id="add">
-	        <input name="choice" type="submit" value="Add">
-	    </form>
-
-	    <form method="post" action="modify_product.php" id="modify">
-	        <input name="choice" type="submit" value="Modify">
+	    <form class="forms_submit" method="post" action="modify_other.php" id="modify">
+	    	<input type="hidden" name="choix" value="<?php echo $Choix;?>">
+	        <input name=other type="submit" value="Modify"> 
 	    </form>
 
 	<?php } ?>
-	<?php if ($_POST["choice"] == "Stock") { ?>
-		<form method="post" action="add_stock.php" id="add">
-	        <input name="choice" type="submit" value="Add">
+
+	<!-- forms for product -->
+ 	<?php if ($Choix == "Product") { ?>
+ 		<form class="forms_submit" method="post" action="add_product.php" id="add">
+	        <input name="Product" type="submit" value="Add">
 	    </form>
 
-	    <form method="post" action="modify_stock.php" id="modify">
-	        <input name="choice" type="submit" value="Modify">
+	    <form class="forms_submit" method="post" action="modify_product.php" id="modify">
+	        <input name="Product" type="submit" value="Modify">
+	    </form>
+
+	<?php } ?>
+
+	<!-- forms for stock -->
+	<?php if ($Choix == "Stock") { ?>
+		<form class="forms_submit" method="post" action="add_stock.php" id="add">
+	        <input name="Stock" type="submit" value="add">
+	    </form>
+
+	    <form class="forms_submit" method="post" action="modify_stock.php" id="modify">
+	        <input name="Stock" type="submit" value="Modify">
 	    </form>	
 	<?php } ?>
-	
-	    <form method="post" action="delete.php" id="delete">
-	        <input name="choice" type="submit" value="Delete">
+
+	    <form class="forms_submit" method="post" action="delete.php" id="delete">
+	        <input name="delete" type="submit" value="Delete">
 	    </form>
 	</div>
+	<input type="button" value="Retour" onclick="history.back()">
 	
 </body>
 </html>
