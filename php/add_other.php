@@ -29,7 +29,7 @@
 
 		if (empty($_POST['name']) || $_POST['name'] ==" ") {										
 			$error = "vide";
-			?><p class="error">Error, you enter an empty value</p><?php
+			?><p class="error">Error, write something please<</p><?php
 		}
 		else{
 			$data = $_POST['name'];
