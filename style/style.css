@@ -60,10 +60,34 @@ div < select[form="modify_other"]{
 	justify-content: center;
 	margin-bottom: 50px;
 }
+.h2_product{
+	margin-bottom: 30px;
+}
+
+#add_product{
+	width: 300px;
+	margin-right: auto;
+	margin-left: auto;
+	display: flex;
+	flex-direction: column;
+}
+
+#add_product p{
+	width: 100%;
+}
+
+#add_product input[type="text"],#add_product select{
+	width: 200px;
+}
+
+.ok_product{
+	display: inline;
+}
 
 .error{
 	text-align: center;
 	color: red;
+
 }
 .correct{
 	text-align: center;

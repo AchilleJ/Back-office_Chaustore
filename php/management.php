@@ -30,10 +30,12 @@
 	<!-- forms for product -->
  	<?php if ($Choix == "Product") { ?>
  		<form class="forms_submit" method="post" action="add_product.php" id="add">
+ 			<input type="hidden" name="choix" value="<?php echo $Choix;?>">
 	        <input name="Product" type="submit" value="Add">
 	    </form>
 
 	    <form class="forms_submit" method="post" action="modify_product.php" id="modify">
+	    	<input type="hidden" name="choix" value="<?php echo $Choix;?>">
 	        <input name="Product" type="submit" value="Modify">
 	    </form>
 
@@ -42,16 +44,19 @@
 	<!-- forms for stock -->
 	<?php if ($Choix == "Stock") { ?>
 		<form class="forms_submit" method="post" action="add_stock.php" id="add">
+			<input type="hidden" name="choix" value="<?php echo $Choix;?>">
 	        <input name="Stock" type="submit" value="add">
 	    </form>
 
 	    <form class="forms_submit" method="post" action="modify_stock.php" id="modify">
+	    	<input type="hidden" name="choix" value="<?php echo $Choix;?>">
 	        <input name="Stock" type="submit" value="Modify">
 	    </form>	
 	<?php } ?>
 
 	    <form class="forms_submit" method="post" action="delete.php" id="delete">
 	        <input name="delete" type="submit" value="Delete">
+	        <input type="hidden" name="choix" value="<?php echo $Choix;?>">
 	    </form>
 	</div>
 	<input type="button" value="Retour" onclick="history.back()">

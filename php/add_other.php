@@ -18,7 +18,7 @@
 			<input type="text" name="name">
 			<input type="submit" name="ok" value="Add">
 
-			<input type="hidden" name="choix" value="<?php echo $choix;?>">  <!-- garder en memoire le choix (brand,color,size ou category) -->
+			<input type="hidden" name="choix" value="<?php echo $choix;?>">  <!-- garder en memoire le choix dans $_POST (brand,color,size ou category) -->
 		</form>
 
 		<a href="../index.php">Retour</a>
@@ -29,7 +29,7 @@
 
 		if (empty($_POST['name']) || $_POST['name'] ==" ") {										
 			$error = "vide";
-			?><p class="error">Error, write something please<</p><?php
+			?><p class="error">Error, write something please</p><?php
 		}
 		else{
 			$data = $_POST['name'];
