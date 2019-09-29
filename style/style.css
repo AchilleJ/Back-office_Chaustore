@@ -45,12 +45,12 @@ input[name="ok"] {
 	margin-bottom: initial;
 }
 
-div < select[form="modify_other"]{
+div < select[form="modify_other"],{
 	display: flex;
 	justify-content: center;
 }
 
-#add_other,#modify_other{
+#add_other,#modify_other,#delete_product{
 	display: flex;
 	justify-content: center;
 }

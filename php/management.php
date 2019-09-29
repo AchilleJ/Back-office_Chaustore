@@ -24,6 +24,10 @@
 	    	<input type="hidden" name="choix" value="<?php echo $Choix;?>">
 	        <input name=other type="submit" value="Modify"> 
 	    </form>
+	    <form class="forms_submit" method="post" action="toto" id="delete">
+	        <input name="delete" type="submit" value="Delete">
+	        <input type="hidden" name="choix" value="<?php echo $Choix;?>">
+	    </form>
 
 	<?php } ?>
 
@@ -38,6 +42,10 @@
 	    	<input type="hidden" name="choix" value="<?php echo $Choix;?>">
 	        <input name="Product" type="submit" value="Modify">
 	    </form>
+	    <form class="forms_submit" method="post" action="delete_product.php" id="delete">
+	        <input name="delete" type="submit" value="Delete">
+	        <input type="hidden" name="choix" value="<?php echo $Choix;?>">
+	    </form>
 
 	<?php } ?>
 
@@ -51,13 +59,13 @@
 	    <form class="forms_submit" method="post" action="modify_stock.php" id="modify">
 	    	<input type="hidden" name="choix" value="<?php echo $Choix;?>">
 	        <input name="Stock" type="submit" value="Modify">
-	    </form>	
-	<?php } ?>
-
-	    <form class="forms_submit" method="post" action="delete.php" id="delete">
+	    </form>
+	    <form class="forms_submit" method="post" action="toto" id="delete">
 	        <input name="delete" type="submit" value="Delete">
 	        <input type="hidden" name="choix" value="<?php echo $Choix;?>">
 	    </form>
+	<?php } ?>
+
 	</div>
 	<input type="button" value="Retour" onclick="history.back()">
 	

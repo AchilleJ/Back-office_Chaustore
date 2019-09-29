@@ -93,13 +93,13 @@
 				    "color"  => $_POST['color'],
 				);												//3 colonnes dans pruduct sont des id  donc -->
 				foreach ($array_form as $key => $value) {			//pour chaque association dans ce tableau, slectionner l'id correspondant
-					$result = mysqli_query($conn,"SELECT id from {$key} where name = '{$value}'");
+					$result = mysqli_query($conn,"SELECT id from $key where name = '$value'");
 					$row = mysqli_fetch_row($result);
 					$array_id[$key][] = $row[0];				// on stock les id dans le tableau				
 				}
 
 				$sql = "insert into product (id,name,category_id,brand_id,color_id,price,gender)
-				values (NULL,'{$_POST['name']}',{$array_id['category'][0]},{$array_id['brand'][0]},{$array_id['color'][0]},{$_POST['price']},'{$_POST['gender']}')";
+				values (NULL,'{$_POST['name']}',{$array_id['category'][0]},{$array_id['brand'][0]},{$array_id['color'][0]},{$_POST['price']},'{$_POST['gender']}')"; // on met par exemple $array_id['category'][0] et pas juste $array_id['category'] car ce dernier ne retourne pas la valeur mais un tableau contenant la valeur, à l'indice 0
 				$result = mysqli_query($conn,$sql);
 
 				?><p class="correct">Successful addition</p><?php
