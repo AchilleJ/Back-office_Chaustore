@@ -71,7 +71,7 @@
 			<p class="ok_product">
 				<input type="submit" name="ok" value="Add">
 			</p>
-			<input type="hidden" name="choix" value="<?php echo $choix;?>">  <!-- garder en memoire le choix dans $_POST (brand,color,size ou category) -->
+			<input type="hidden" name="choix" value="<?php echo $choix;?>">  <!-- garder en memoire le choix dans $_POST -->
 		</form>
 
 		<a href="../index.php">Retour</a>
@@ -98,7 +98,7 @@
 					$array_id[$key][] = $row[0];				// on stock les id dans le tableau				
 				}
 
-				$sql = "insert into product (id,name,category_id,brand_id,color_id,price,gender)
+				$sql = "INSERT into product (id,name,category_id,brand_id,color_id,price,gender)
 				values (NULL,'{$_POST['name']}',{$array_id['category'][0]},{$array_id['brand'][0]},{$array_id['color'][0]},{$_POST['price']},'{$_POST['gender']}')"; // on met par exemple $array_id['category'][0] et pas juste $array_id['category'] car ce dernier ne retourne pas la valeur mais un tableau contenant la valeur, à l'indice 0
 				$result = mysqli_query($conn,$sql);
 

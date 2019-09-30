@@ -7,7 +7,7 @@ Voici comment sera divisé le code du back office
 faire un programme pour supprimer une marque, une couleur, une category.
 un autre pour supprimer un produit, un autre pour un stock, un autre pour une taille (les 4 programmes different car les tables n'on pas les meme laison et il faut faire differente jointure en fonction de ce qu'on veut supprimer ex: on supprime la couleur bleu, il faut supprimer tout les produits bleu et tout les stock de ces produit) 
 
-La visualisation des données de chaque tables sera lors de la modification.
+un bouton visualisation sera present lorsqu'on choisis "product" ou "stock" dans management.php.
 
 la page d'acceuil possedera 6 boutons "brand gestion, category gestion etc.."
 on clique sur un bouton et on lance un autre page avec modifié/ajouté/supprimer en fonction du bouton de gestion choisis 

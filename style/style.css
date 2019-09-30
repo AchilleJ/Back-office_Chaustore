@@ -50,7 +50,7 @@ div < select[form="modify_other"],{
 	justify-content: center;
 }
 
-#add_other,#modify_other,#delete_product{
+#add_other,#modify_other,#delete_product,#modify_stock{
 	display: flex;
 	justify-content: center;
 }

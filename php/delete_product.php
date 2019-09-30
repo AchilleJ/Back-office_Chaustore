@@ -41,7 +41,7 @@
 		<form method="post" action="delete_product.php" id="delete_product">
 			<input type="submit" name="ok" value="Delete">
 
-			<input type="hidden" name="choix" value="<?php echo $choix;?>">  <!-- garder en memoire le choix dans $_POST (brand,color,size ou category) -->
+			<input type="hidden" name="choix" value="<?php echo $choix;?>">  <!-- garder en memoire le choix dans $_POST -->
 		</form>
 		<a href="../index.php">Retour</a>
 
