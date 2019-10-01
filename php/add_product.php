@@ -61,12 +61,10 @@
 				<label for="name">Price:</label>	
 				<input type="number" name="price">
 			</p>
-			<p>
 				<div>
 					<input type="radio" name="gender" value="H"> Male </input>
 					<input type="radio" name="gender" value="F"> Female </input>
 				</div>
-			</p>
 
 			<p class="ok_product">
 				<input type="submit" name="ok" value="Add">
@@ -81,9 +79,9 @@
 		$error= "";
 		if (isset($_POST['name']) || isset($_POST['price'])) {		//name et price n'existe pas lorsqu' on lance la page donc on rentre dans la condition seulement si on submit (cela créer name et price)
 
-			if ((empty($_POST['name']) || $_POST['name'] ==" ") || (empty($_POST['price']) || $_POST['price'] ==" ")) {										
+			if ((empty($_POST['name']) || $_POST['name'] ==" ") || (empty($_POST['price']) || $_POST['price'] ==" ") || (empty($_POST['gender']))) {										
 				$error = "vide";
-				?><p class="error">Error, write something please</p><?php
+				?><p class="error">Error, one or many fields are empty</p><?php
 			}
 			else{
 				$array_id = array(); // tabelau pour stocker les id
@@ -102,7 +100,12 @@
 				values (NULL,'{$_POST['name']}',{$array_id['category'][0]},{$array_id['brand'][0]},{$array_id['color'][0]},{$_POST['price']},'{$_POST['gender']}')"; // on met par exemple $array_id['category'][0] et pas juste $array_id['category'] car ce dernier ne retourne pas la valeur mais un tableau contenant la valeur, à l'indice 0
 				$result = mysqli_query($conn,$sql);
 
-				?><p class="correct">Successful addition</p><?php
+				if ($_POST['price'] < 0) {
+					?><p class="error">Price can't be negative</p><?php
+				}
+				else{
+					?><p class="correct">Successful addition</p><?php
+				}
 			}
 		}
 		/*

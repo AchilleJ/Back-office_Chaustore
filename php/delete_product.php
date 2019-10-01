@@ -15,13 +15,16 @@
 		<h2 class="h2_product">Select a <?php echo $choix ?> you want to delete:</h2>
 
 		<?php
-		if (isset($_POST['product'])) {
+		if (isset($_POST['product']) && (isset($_POST["confirmation"]) && ($_POST["confirmation"]) == "yes")) {
 			$product_name = $_POST['product'] ;
 			$id = mysqli_query($conn,"SELECT id from product where name = '$product_name'");
 			$row = mysqli_fetch_row($id);
 			mysqli_query($conn,"DELETE from stock where product_id = $row[0]");
 			mysqli_query($conn,"DELETE from product where name = '$product_name'");
 			?><p class="correct">Successful deletion</p><?php
+		}
+		if (isset($_POST['product']) && !isset($_POST["confirmation"])) {
+			?><p class="error">Error, you must check "yes"</p><?php
 		}
 		?>
 
@@ -38,12 +41,16 @@
 			</select>
 		</div>
 
-		<form method="post" action="delete_product.php" id="delete_product">
+		<form method="post" action="" id="delete_product">
+			<div>
+				<label>Are you sure ?</label>
+				<input type="checkbox" name="confirmation" value="yes"> Yes </input>
+			</div>
+
 			<input type="submit" name="ok" value="Delete">
 
 			<input type="hidden" name="choix" value="<?php echo $choix;?>">  <!-- garder en memoire le choix dans $_POST -->
 		</form>
 		<a href="../index.php">Retour</a>
-
 	</body>
 	</html>
