@@ -22,7 +22,7 @@
 
 	    <form class="forms_submit" method="post" action="modify_other.php" id="modify">
 	    	<input type="hidden" name="choix" value="<?php echo $Choix;?>">
-	        <input name=other type="submit" value="Modify"> 
+	        <input name=other type="submit" value="Modify">
 	    </form>
 	    <form class="forms_submit" method="post" action="toto" id="delete">
 	        <input name="delete" type="submit" value="Delete">
@@ -33,20 +33,23 @@
 
 	<!-- forms for product -->
  	<?php if ($Choix == "Product") { ?>
- 		<form class="forms_submit" method="post" action="add_product.php" id="add">
- 			<input type="hidden" name="choix" value="<?php echo $Choix;?>">
-	        <input name="Product" type="submit" value="Add">
-	    </form>
+	 		<form class="forms_submit" method="post" action="add_product.php" id="add">
+	 			<input type="hidden" name="choix" value="<?php echo $Choix;?>">
+		        <input name="Product" type="submit" value="Add">
+		    </form>
 
-	    <form class="forms_submit" method="post" action="modify_product.php" id="modify">
-	    	<input type="hidden" name="choix" value="<?php echo $Choix;?>">
-	        <input name="Product" type="submit" value="Modify">
-	    </form>
-	    <form class="forms_submit" method="post" action="delete_product.php" id="delete">
-	        <input name="delete" type="submit" value="Delete">
-	        <input type="hidden" name="choix" value="<?php echo $Choix;?>">
-	    </form>
-
+		    <form class="forms_submit" method="post" action="modify_product.php" id="modify">
+		    	<input type="hidden" name="choix" value="<?php echo $Choix;?>">
+		        <input name="Product" type="submit" value="Modify">
+		    </form>
+		    <form class="forms_submit" method="post" action="delete_product.php" id="delete">
+		        <input name="delete" type="submit" value="Delete">
+		        <input type="hidden" name="choix" value="<?php echo $Choix;?>">
+		    </form>
+		   	<form class="forms_submit" method="post" action="view_product.php" id="view">
+		        <input name="view" type="submit" value="View">
+		        <input type="hidden" name="choix" value="<?php echo $Choix;?>">
+		    </form>
 	<?php } ?>
 
 	<!-- forms for stock -->
@@ -64,6 +67,10 @@
 	        <input name="delete" type="submit" value="Delete">
 	        <input type="hidden" name="choix" value="<?php echo $Choix;?>">
 	    </form>
+		<form class="forms_submit" method="post" action="view_stock.php" id="view">
+		    <input name="view" type="submit" value="View">
+		    <input type="hidden" name="choix" value="<?php echo $Choix;?>">
+		</form>
 	<?php } ?>
 
 	</div>
