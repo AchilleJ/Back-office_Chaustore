@@ -16,7 +16,7 @@
 
 		<?php
 		if (isset($_POST['product']) && (isset($_POST["confirmation"]) && ($_POST["confirmation"]) == "yes")) {
-			$product_name = $_POST['product'] ;
+			$product_name = $_POST['product'];
 			$id = mysqli_query($conn,"SELECT id from product where name = '$product_name'");
 			$row = mysqli_fetch_row($id);
 			mysqli_query($conn,"DELETE from stock where product_id = $row[0]");

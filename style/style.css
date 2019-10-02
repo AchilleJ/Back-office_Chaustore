@@ -51,7 +51,7 @@ div < select[form="modify_other"],{
 	justify-content: center;
 }
 
-#add_other,#modify_other,#delete_product,#modify_stock{
+#add_other,#modify_other,#delete_product,#modify_stock,#delete_category_brand_color{
 	display: flex;
 	justify-content: center;
 }

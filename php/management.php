@@ -24,7 +24,7 @@
 	    	<input type="hidden" name="choix" value="<?php echo $Choix;?>">
 	        <input name=other type="submit" value="Modify">
 	    </form>
-	    <form class="forms_submit" method="post" action="toto" id="delete">
+	    <form class="forms_submit" method="post" action="delete_category_brand_color.php" id="delete">
 	        <input name="delete" type="submit" value="Delete">
 	        <input type="hidden" name="choix" value="<?php echo $Choix;?>">
 	    </form>
