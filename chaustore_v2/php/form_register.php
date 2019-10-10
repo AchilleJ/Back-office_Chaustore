@@ -4,10 +4,10 @@ require_once('../../php/connectDB.php');?>
 <html lang="fr">
 <head>
   <meta charset="utf-8">
-  <title>Simplon - Formulaire d'inscription</title>
+  <title>Chaustore register form</title>
 </head>
 <body>
-    <h1>Register form</h1>
+    <h1>Chaustore register form</h1>
 
     <form method="post" action="form_register.php">
         <p>
@@ -24,7 +24,7 @@ require_once('../../php/connectDB.php');?>
         </p>
         <p>
             <label for="password">Password</label>
-            <input type="password" id="password" name="password" value="<?php if(!empty($_POST['password'])) echo $_POST['password'];?>">
+            <input type="password" id="password" name="password">
         </p>
         <input type="submit" value="Create your account">
     </form>
@@ -60,11 +60,13 @@ require_once('../../php/connectDB.php');?>
             $sql = "INSERT INTO user (
                     firstname, 
                     lastname, 
-                    email)
+                    email,
+                    password)
                     VALUES (
                     '".$_POST['firstname']."', 
                     '".$_POST['lastname']."', 
-                    '".$_POST['email']."'
+                    '".$_POST['email']."',
+                    '".password_hash($_POST['password'], PASSWORD_DEFAULT)."'
                     )";
             
         
@@ -81,7 +83,6 @@ require_once('../../php/connectDB.php');?>
             }
 
             else {
-                echo 1;
                 $msg = "An error occured please try again later";
                 ?> <p><?php echo $msg; ?></p> <?php
             }
