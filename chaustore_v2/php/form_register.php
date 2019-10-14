@@ -75,6 +75,7 @@ require_once('../../php/connectDB.php');?>
             if($result){
                 $msg = "Thanks"." ".$_POST['firstname'].", Your account has been created";
                 ?> <p><?php echo $msg; ?></p> <?php
+                //mail
             }
 
             else if (mysqli_errno($conn) == 1062) {    //1062 = numero de l'erreur lié au doublon
