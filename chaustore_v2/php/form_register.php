@@ -73,9 +73,10 @@ require_once('../../php/connectDB.php');?>
             $result = $conn->query($sql);
 
             if($result){
-                $msg = "Thanks"." ".$_POST['firstname'].", Your account has been created";
+                $msg = "Thanks"." ".$_POST['firstname'].", Your account has been created"."<br>"."A confirmation mail has been send to"." ".$_POST['email'];
+                mail($_POST['email'], "Confirmation d'inscription", "Vous venez de vous incrire à la boutique en ligne Chaustore", "FROM : Chaustore");
                 ?> <p><?php echo $msg; ?></p> <?php
-                //mail
+
             }
 
             else if (mysqli_errno($conn) == 1062) {    //1062 = numero de l'erreur lié au doublon
