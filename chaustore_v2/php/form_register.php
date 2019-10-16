@@ -28,6 +28,7 @@ require_once('../../php/connectDB.php');?>
         </p>
         <input type="submit" value="Create your account">
     </form>
+    <a href="index.php">retour</a>
     <?php
 
     if(!empty($_POST)){
