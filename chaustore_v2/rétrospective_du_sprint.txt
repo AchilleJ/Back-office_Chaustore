@@ -1,0 +1,11 @@
+Rétrospective du sprint de 2 semaines:
+Points qui ont fonctionné:
+ -Le listing des produits ainsi que les mentions par rapport à leurs stocks ont été réalisés.
+ -Le formulaire d'inscription avec le cryptage du mot de passe et l'envoi de mail de confirmation fonctionnent.
+ -Le formulaire de connexion fonctionne.
+ -Une session pour l'utilisateur connecté a été mis en place.
+
+les points d'améliorations:
+ -Le formulaire de réinitialisation de mot de passe de fonctionne pas, il détecte seulement si l'email entré existe dans la base.
+ -Il y a des failles de sécurité comme l'injection SQL qui n'est pas gérée.
+ -Certains cas possibles menant à des erreurs lors de la saisie dans un champ d'un formulaire devraient être testés.
