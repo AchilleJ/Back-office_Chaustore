@@ -20,9 +20,10 @@
 	} else {
 		?> <a href="form_connection.php">Connection</a> <?php 
 	}
-
 	//
 	?>
+
+	<a href="listing_product.php">list of products</a>
 
 </body>
 </html>

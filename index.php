@@ -17,6 +17,7 @@
             <input name="choice" type="submit" value="Product"> 
             <input name="choice" type="submit" value="Stock">  
         </form>
+        <a href="chaustore_v2/php/index.php">Go to Chaustore</a>
     </div>
 
 
