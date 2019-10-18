@@ -24,6 +24,7 @@ session_destroy();				//on detruit la session car le lien de deconnection pointe
         <input type="submit" value="Sign in">
     </form>
     <a href="index.php">retour</a>
+    <a href="reset_password.php">Mot de passe oublié</a>
     <?php
 
     if(!empty($_POST)){
